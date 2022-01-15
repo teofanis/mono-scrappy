@@ -1,12 +1,23 @@
-import type { NextPage } from 'next'
-
+import axios from 'libs/axios';
+import type { GetStaticProps, NextPage } from 'next'
+import { useEffect } from 'react';
+import {Layout} from '../components';
 
 const Home: NextPage = () => {
+
+  useEffect(() => {
+    const t = axios.get('/api/bookmark').then(res => res.data);
+    console.log(t);
+  }, []);
   return (
-    <div className="bg-blue-500">
+    <Layout>
+
       <p>Hi</p>
-    </div>
+
+    </Layout>
   )
 }
+
+
 
 export default Home
