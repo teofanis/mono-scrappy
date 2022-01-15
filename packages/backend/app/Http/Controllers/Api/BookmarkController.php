@@ -16,6 +16,7 @@ class BookmarkController extends Controller
      */
     public function index(Request $request)
     {
+        sleep(1);
         $tags = $request->get('tags') ? explode(',', $request->get('tags')): [];
         return BookmarkResource::collection(Bookmark::with('tags')->withAllTags($tags)->get());
     }

@@ -35,8 +35,8 @@ const Home: NextPage = () => {
             An error occurred
           </div>
         )}
-        {!error && !filteredBookmarks && <Skeleton />}
-        {!error && filteredBookmarks && (
+        {!error && !bookmarks && <Skeleton />}
+        {!error && bookmarks && (
           <BookmarkList
             tags={tags?.data || []}
             activeTagFilters={activeTagFilters}
