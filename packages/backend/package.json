@@ -10,7 +10,8 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "start": "vendor/bin/sail up"
+        "start": "vendor/bin/sail up",
+        "setup": "vendor/bin/sail up && sail php artisan scrappy-setup"
     },
     "devDependencies": {
         "axios": "^0.21",

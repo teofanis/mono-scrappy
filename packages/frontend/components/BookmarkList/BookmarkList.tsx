@@ -13,7 +13,6 @@ const BookmarkList = ({ bookmarks, tags, activeTagFilters, setTagFilters }: Book
   const handleTagFilterChange = (selected: any) => {
     setTagFilters(selected.flat()?.map((option: { value: string, label: string}) => option.value) || []);
   };
-  console.log(bookmarks);
   return (
     <section className="text-gray-700 body-font">
       <div className="container px-5 w-1/3 py-6">
@@ -36,6 +35,7 @@ const BookmarkList = ({ bookmarks, tags, activeTagFilters, setTagFilters }: Book
                 <BookmarkCard loading={false} bookmark={bookmark} />
               </React.Fragment>
             ))}
+            {bookmarks.length === 0 && (<span className="text-gray-500 text-3xl w-full text-center">No Bookmarks Found {activeTagFilters.length > 0 ? ' matching '+ activeTagFilters.join(',')+' tags' :''}</span>)}
         </div>
       </div>
     </section>
