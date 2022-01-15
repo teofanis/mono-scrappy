@@ -20,4 +20,5 @@ class BookmarkResource extends JsonResource
             'tags' => TagResource::collection($this->whenLoaded('tags')),
         ];
     }
+
 }

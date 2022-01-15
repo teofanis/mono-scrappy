@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\BookmarkController;
 
 /*
@@ -14,4 +15,5 @@ use App\Http\Controllers\Api\BookmarkController;
 */
 
 Route::get('/bookmark', [BookmarkController::class, 'index']);
+Route::get('/tags', [TagController::class, 'index']);
 

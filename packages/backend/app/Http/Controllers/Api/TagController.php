@@ -2,22 +2,21 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
-use App\Http\Resources\BookmarkResource;
-use App\Models\Bookmark;
 use Illuminate\Http\Request;
+use App\Http\Resources\TagResource;
+use App\Http\Controllers\Controller;
+use Spatie\Tags\Tag;
 
-class BookmarkController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $tags = $request->get('tags') ? explode(',', $request->get('tags')): [];
-        return BookmarkResource::collection(Bookmark::with('tags')->withAllTags($tags)->get());
+        return TagResource::collection(Tag::all());
     }
 
     /**
@@ -34,10 +33,10 @@ class BookmarkController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Bookmark  $bookmark
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Bookmark $bookmark)
+    public function show($id)
     {
         //
     }
@@ -46,10 +45,10 @@ class BookmarkController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Bookmark  $bookmark
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Bookmark $bookmark)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -57,10 +56,10 @@ class BookmarkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Bookmark  $bookmark
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bookmark $bookmark)
+    public function destroy($id)
     {
         //
     }
