@@ -12,7 +12,8 @@
     "scripts": {
       "bootstrap": "lerna bootstrap --use-workspaces",
       "start": "lerna run start --parallel",
-      "build": "lerna run build --parallel"
+      "build": "lerna run build --parallel",
+      "start:dev": "lerna run dev --parallel"
     },
     "devDependencies": {
       "lerna": "^3.22.1"
