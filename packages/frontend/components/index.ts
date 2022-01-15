@@ -6,5 +6,6 @@ export {default as Logo} from './Logo/Logo';
 export {default as Nav} from './Nav/Nav';
 export {default as BookmarkCard} from './BookMarkCard/BookmarkCard';
 export {default as Skeleton} from './Skeleton/Skeleton';
+export {default as Badge} from './Badge/Badge';
 
 
