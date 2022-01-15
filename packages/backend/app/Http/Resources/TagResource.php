@@ -18,8 +18,6 @@ class TagResource extends JsonResource
             'id' => $this->resource->id,
             'name' => $this->resource->name,
             'order_column' => $this->resource->order_column,
-            'created_at' => $this->resource->created_at,
-            'updated_at'=> $this->resource->updated_at,
         ];
     }
 }

@@ -1,19 +1,22 @@
+import BookmarkList from 'components/BookmarkList/BookmarkList';
+import { Bookmark } from 'interfaces';
 import axios from 'libs/axios';
 import type { GetStaticProps, NextPage } from 'next'
-import { useEffect } from 'react';
-import {Layout} from '../components';
+import useSWR from 'swr';
+import {Layout, Skeleton} from '../components';
+
+
+const fetcher = (url:string) => axios.get(url).then(res => res.data);
 
 const Home: NextPage = () => {
-
-  useEffect(() => {
-    const t = axios.get('/api/bookmark').then(res => res.data);
-    console.log(t);
-  }, []);
+  const { data: bookmarks, error } = useSWR<{data: Bookmark[]}>('/api/bookmark', fetcher);
   return (
     <Layout>
-
-      <p>Hi</p>
-
+      <div className="py-10">
+        {error && <div className="text-xl text-center font-semibold text-red-500"> An error occurred</div>}
+        {!error && !bookmarks && <Skeleton />}
+        {!error && bookmarks && <BookmarkList bookmarks={bookmarks.data} />}
+      </div>
     </Layout>
   )
 }

@@ -3,7 +3,7 @@ import React from "react";
 
 const Nav = () => {
   return (
-      <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div className=" block flex-grow lg:flex lg:items-center lg:w-auto">
         <div className="text-sm lg:flex-grow text-right">
           <Link  href="/">
             <a className="block mt-4 lg:inline-block lg:mt-0 font-bold text-lg mr-4 transition ease-in-out duration-500 transform hover:-translate-y-0.5

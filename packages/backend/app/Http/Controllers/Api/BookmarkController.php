@@ -16,6 +16,7 @@ class BookmarkController extends Controller
      */
     public function index()
     {
+        sleep(1);
         return BookmarkResource::collection(Bookmark::with('tags')->get());
     }
 
