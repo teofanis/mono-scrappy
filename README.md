@@ -4,8 +4,6 @@ Clone the repository and run the command from the root of the repository
 
 copy .env.example to .env in both packages/frontend and packages/backend
 
-run yarn from the projects root to install the dependancies and then run the command blow
-
 ```shell
 $ yarn scrappy:setup
 ```
