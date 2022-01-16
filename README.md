@@ -4,6 +4,9 @@ Clone the repository and run the command from the root of the repository
 
 copy .env.example to .env in both packages/frontend and packages/backend
 
+run yarn install in packages/frontend and composer install in packages/backend
+
+
 ```shell
 $ yarn scrappy:setup
 ```
