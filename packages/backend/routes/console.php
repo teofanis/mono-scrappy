@@ -21,6 +21,9 @@ Artisan::command('scrappy-setup', function () {
             echo "Booting Scrappy in $i seconds...\n";
             sleep(1);
         }
+        $this->info("Generating app key...");
+        Artisan::call('key:generate');
+        $this->info("Setting up the database...");
         Artisan::call('migrate:fresh');
         $this->info("Database setup complete. Launching scrapper...");
         Artisan::call('scrape:pinboard');
